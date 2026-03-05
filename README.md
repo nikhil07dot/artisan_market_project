@@ -7,8 +7,7 @@ Built with modern web technologies, featuring authentication, admin dashboard, p
 
 ## 🚀 Live Demo
 
-*(Add your deployed frontend link here once deployed)*
-
+https://artisanmarketproject.vercel.app/
 ---
 
 ## 📌 Features
@@ -130,7 +129,18 @@ npm run dev
 
 ## 🖼️ Screenshots
 
-*(Add screenshots of your Home page, Product page, Admin dashboard here for better presentation.)*
+<img width="1893" height="865" alt="image" src="https://github.com/user-attachments/assets/514cec33-4d5b-41ac-9ebe-a7b14d300cd0" />
+<img width="1890" height="865" alt="image" src="https://github.com/user-attachments/assets/62c0ffde-db31-48a4-88ce-88a923354b60" />
+<img width="1919" height="781" alt="image" src="https://github.com/user-attachments/assets/abfbdd29-2a72-43c6-8634-6a540500e101" />
+<img width="1886" height="871" alt="image" src="https://github.com/user-attachments/assets/3d101fec-971c-4331-995d-50c97f697638" />
+<img width="1881" height="870" alt="image" src="https://github.com/user-attachments/assets/acff7d68-57e0-4f20-b511-948ae4daaa95" />
+<img width="1892" height="860" alt="image" src="https://github.com/user-attachments/assets/86b254ed-f84f-4af2-be15-90b031a7163c" />
+<img width="1896" height="865" alt="image" src="https://github.com/user-attachments/assets/0b8c700a-70b1-4ab6-a828-7d9417b848cf" />
+<img width="1886" height="866" alt="image" src="https://github.com/user-attachments/assets/3a08846b-274e-49eb-b9a2-fa301c7a9b43" />
+<img width="1890" height="863" alt="image" src="https://github.com/user-attachments/assets/4b84b248-1f21-496b-89db-6d40ad62ec15" />
+<img width="1897" height="757" alt="image" src="https://github.com/user-attachments/assets/6926ddf8-281d-4f3a-aa10-1c9f2ad394fa" />
+<img width="1888" height="866" alt="image" src="https://github.com/user-attachments/assets/18bb6c03-8c92-4d5e-8125-c5fca5faed0c" />
+
 
 ---
 
