@@ -8,8 +8,10 @@ import { useWishlist } from "../Wishlist/WishlistContext";
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion as Motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import API from "../../api";
 
 const categories = [
+  "Pottery",
   "Pottery & Clay Art",
   "Functional Ceramics",
   "Decorative Artworks",
@@ -144,8 +146,7 @@ const ProductsPage = () => {
   const categoryRefs = useRef({});
 
   useEffect(() => {
-    axios
-      .get("http://localhost:5000/api/products")
+  axios.get(`${API}/api/products`)
       .then(res => {
         setProducts(res.data);
       })

@@ -8,6 +8,7 @@ import { Tooltip } from 'react-tooltip';
 import { useCart } from '../Cart/CartContext';
 import { useWishlist } from '../Wishlist/WishlistContext';
 import { useToast } from '../Toast/ToastContext';
+import API from "../../api";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -25,14 +26,14 @@ const ProductDetail = () => {
 
   useEffect(() => {
     const fetchProduct = async () => {
-      const res = await fetch(`/api/products/${id}`);
+      const res = await fetch(`${API}/api/products/${id}`);
       const data = await res.json();
       setProduct(data);
       fetchRelated(data.category, data._id);
     };
 
     const fetchRelated = async (category, currentId) => {
-      const res = await fetch(`/api/products`);
+      const res = await fetch(`${API}/api/products`);
       const data = await res.json();
       const filtered = data.filter(p => p.category === category && p._id !== currentId);
       setRelated(filtered.slice(0, 4));

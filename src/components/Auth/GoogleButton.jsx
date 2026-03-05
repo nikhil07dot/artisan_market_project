@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const GoogleButton = ({ redirectPath = '/' }) => {
   const navigate = useNavigate();
 
@@ -18,18 +20,18 @@ const GoogleButton = ({ redirectPath = '/' }) => {
         email: user.email,
       };
 
-      try {
-        await axios.post('http://localhost:5000/api/users/register', userData);
-      } catch (err) {
-        if (err.response?.status === 200 || err.response?.status === 400) {
-          await axios.post('http://localhost:5000/api/users/login', {
-            email: user.email,
-          });
-        } else {
-          throw err;
-        }
-      }
-
+     try {
+  await axios.post(`${import.meta.env.VITE_API_URL}/api/users/register`, userData);
+} catch (err) {
+  if (err.response?.status === 409) {
+    // User already exists → login instead
+    await axios.post(`${import.meta.env.VITE_API_URL}/api/users/login`, {
+      email: user.email,
+    });
+  } else {
+    throw err;
+  }
+}
       toast.success('✅ Signed in with Google!');
       setTimeout(() => navigate(redirectPath, { replace: true }), 1000);
     } catch (error) {

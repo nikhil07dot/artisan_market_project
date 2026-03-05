@@ -9,6 +9,8 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const SignUp = () => {
   const navigate = useNavigate();
 
@@ -31,7 +33,7 @@ const SignUp = () => {
       await updateProfile(userCredential.user, { displayName: name });
 
       // MongoDB Sync
-      await axios.post('http://localhost:5000/api/users/register', {
+      await axios.post(`${API_URL}/api/users/register`, {
         name,
         email,
         password
@@ -130,7 +132,7 @@ const SignUp = () => {
           {/* 👇 GoogleButton should handle backend sync too */}
           <GoogleButton onSuccess={async (user) => {
             try {
-              await axios.post('http://localhost:5000/api/users/register', {
+              await axios.post(`${API_URL}/api/users/register`, {
                 name: user.displayName,
                 email: user.email,
                 password, // Placeholder, not used

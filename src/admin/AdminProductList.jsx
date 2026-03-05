@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const AdminProductList = () => {
   const [products, setProducts] = useState([]);
   const [editingId, setEditingId] = useState(null);
@@ -8,7 +10,7 @@ const AdminProductList = () => {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/products/admin/products');
+     const res = await axios.get(`${API_URL}/api/products/admin/products`);
       setProducts(res.data);
     } catch (err) {
       console.error('❌ Failed to fetch products', err);
@@ -21,7 +23,7 @@ const AdminProductList = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/products/admin/products/${id}`);
+      await axios.delete(`${API_URL}/api/products/admin/products/${id}`);
       fetchProducts(); // refresh list
     } catch (err) {
       console.error('❌ Failed to delete product', err);
@@ -40,7 +42,7 @@ const AdminProductList = () => {
 
   const saveEdit = async () => {
     try {
-      await axios.put(`http://localhost:5000/api/products/admin/products/${editingId}`, editedProduct);
+      await axios.put(`${API_URL}/api/products/admin/products/${editingId}`, editedProduct);
       setEditingId(null);
       fetchProducts();
     } catch (err) {
