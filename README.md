@@ -30,10 +30,6 @@ https://artisanmarketproject.vercel.app/
 * Admin Login
 * Admin Dashboard
 * Add / Edit / Delete Products
-* Product Manager Panel
-* User Activity Logs
-* Protected Admin Routes
-
 ---
 
 ## 🧱 Tech Stack
@@ -50,7 +46,6 @@ https://artisanmarketproject.vercel.app/
 * Node.js
 * Express.js
 * MongoDB
-* Mongoose
 
 ### 🔐 Authentication
 
